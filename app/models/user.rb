@@ -23,9 +23,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
-<<<<<<< HEAD
+
   after_validation { self.errors.messages.delete(:password_digest) }
-=======
+
 
 
   private
@@ -34,5 +34,5 @@ class User < ActiveRecord::Base
     self.remember_token = SecureRandom.urlsafe_base64
   end
 
->>>>>>> sign-in-out
+
 end
