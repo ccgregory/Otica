@@ -1,8 +1,8 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." , 
-     :id => "ta1", :onkeyup => "textCounter('ta1','ta1count',140);" , :onKeyDown => "textCounter('ta1','ta1count',140);" %>
+    <%= f.text_area :content, placeholder: "Compose new micropost..." ,
+     :id => "micropost_content", :onkeyup => "textCounter('ta1','ta1count',140);" , :onKeyDown => "textCounter('micropost_content','ta1count',140);" %>
 	 <br/>
   <input id="ta1count" readonly type="text" size="30"/>
   </div>

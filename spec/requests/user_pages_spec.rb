@@ -54,8 +54,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
-    it { should have_selector('title', text: 'Sign up') }
+    it { should have_selector('h1',    text: 'Cadastro') }
+    it { should have_selector('title', text: 'Cadastre-se') }
   end
   
   describe "profile page" do
@@ -70,7 +70,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Criar uma nova conta" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -95,7 +95,7 @@ describe "User pages" do
         let(:user) { User.find_by_email('user@example.com') }
 
         it { should have_selector('title', text: user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_selector('div.alert.alert-success', text: 'Seja bem vindo') }
         it { should have_link('Sign out') }
       end
     end # with valid information

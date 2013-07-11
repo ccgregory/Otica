@@ -11,7 +11,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading)    { 'Sample App' }
+    let(:heading)    { 'Leslie' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
@@ -50,40 +50,42 @@ describe "Static pages" do
   describe "Help page" do
     before { visit help_path }
     
-    let(:heading)    { 'Help' }
-    let(:page_title) { 'Help' }
+    let(:heading)    { 'Ajuda' }
+    let(:page_title) { 'Ajuda' }
     it_should_behave_like "all static pages"
   end
 
   describe "About page" do
     before { visit about_path }
 
-    let(:heading)    { 'About' }
-    let(:page_title) { 'About Us' }
+    let(:heading)    { 'A empresa' }
+    let(:page_title) { 'A empresa' }
     it_should_behave_like "all static pages"
   end
 
   describe "Contact page" do
     before { visit contact_path }
 
-    let(:heading)    { 'Contact' }
-    let(:page_title) { 'Contact' }
+    let(:heading)    { 'Contato' }
+    let(:page_title) { 'Contato' }
     it_should_behave_like "all static pages"
   end
   
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
-    page.should have_selector 'title', text: full_title('About Us')
-    click_link "Help"
-    page.should have_selector 'title', text: full_title('Help')
-    click_link "Contact"
-    page.should have_selector 'title', text: full_title('Contact')
+    click_link "A empresa"
+    page.should have_selector 'title', text: full_title('A empresa')
+    click_link "Ajuda"
+    page.should have_selector 'title', text: full_title('Ajuda')
+    click_link "Contato"
+    page.should have_selector 'title', text: full_title('Contato')
     click_link "Home"
-    click_link "Sign up now!"
-    page.should have_selector 'title', text: full_title('Sign up')
-    click_link "sample app"
+    click_link "Cadastre-se!"
+    page.should have_selector 'title', text: full_title('Cadastre-se')
+    click_link "LeslieOtica"
     page.should have_selector 'title', text: full_title('')
+    click_link "Novidades"
+    page.should have_selector 'title', text: full_title('Novidades')
   end
 
 end

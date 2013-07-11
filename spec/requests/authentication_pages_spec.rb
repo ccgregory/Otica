@@ -7,17 +7,17 @@ describe "Authentication" do
   describe "signin page" do
     before { visit signin_path }
 
-    it { should have_selector('h1',    text: 'Sign in') }
-    it { should have_selector('title', text: 'Sign in') }
+    it { should have_selector('h1',    text: 'Logar') }
+    it { should have_selector('title', text: 'Logar') }
   end
   
   describe "signin" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
+      before { click_button "Logar" }
 
-      it { should have_selector('title', text: 'Sign in') }
+      it { should have_selector('title', text: 'Logar') }
       it { should have_error_message('Invalid')}
     end
     
@@ -36,11 +36,11 @@ describe "Authentication" do
       it { should have_link('Settings', href: edit_user_path(user)) }
       it { should have_link('Sign out', href: signout_path) }
       
-      it { should_not have_link('Sign in', href: signin_path) }
+      it { should_not have_link('Logar', href: signin_path) }
       
       describe "followed by signout" do
         before { click_link "Sign out" }
-        it { should have_link('Sign in') }
+        it { should have_link('Logar') }
       end
     end  # with valid information 
   end  # signin
@@ -55,7 +55,7 @@ describe "Authentication" do
           visit edit_user_path(user)
           fill_in "Email",    with: user.email
           fill_in "Password", with: user.password
-          click_button "Sign in"
+          click_button "Logar"
         end
 
         describe "after signing in" do
@@ -70,7 +70,7 @@ describe "Authentication" do
               visit signin_path
               fill_in "Email",    with: user.email
               fill_in "Password", with: user.password
-              click_button "Sign in"
+              click_button "Logar"
             end
 
             it "should render the default (profile) page" do
@@ -84,7 +84,7 @@ describe "Authentication" do
       describe "in the Users controller" do
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('title', text: 'Logar') }
         end
 
         describe "submitting to the update action" do
@@ -93,17 +93,17 @@ describe "Authentication" do
         end
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('title', text: 'Logar') }
         end 
         
         describe "visiting the following page" do
           before { visit following_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('title', text: 'Logar') }
         end
 
         describe "visiting the followers page" do
           before { visit followers_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('title', text: 'Logar') }
         end        
       end   #in the Users controller
       
