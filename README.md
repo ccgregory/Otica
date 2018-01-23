@@ -1,3 +1,3 @@
-# Ruby on Rails Optic application
+# Optic Store application using Ruby on Rails
 
-This is an application in Ruby on Rails.
+This is an application for a optic store developed in Ruby on Rails.
